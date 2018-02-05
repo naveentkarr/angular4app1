@@ -1,37 +1,37 @@
-import {Component, OnInit} from '@angular/core';
-import { Hero } from './hero/hero';
-import {HeroService} from './hero/hero.service';
+
+import {Component} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {LoginComponent} from './login/login.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {HeroDetailComponent} from './hero-detail/hero-detail.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    providers: [HeroService]
+  selector: 'app-root',
+  template: '<router-outlet></router-outlet>'
 })
+export class AppComponent {}
 
-export class AppComponent implements OnInit {
-    
-    hero: Hero = {
-        id: 1,
-        name: 'Windstorm'
-    };
-    heroes:Hero[];
-    title = 'angular 5 app';
-    selectedHero: Hero;
-   constructor(private heroService: HeroService) { }
-     getHeroes():void{
-         this.heroService.getHeroesSlowly().then(heroes => {
-             this.heroes = heroes
-         },error => {
-             console.log(error)
-         });
-     }
-     ngOnInit():void{
-         this.getHeroes();
-     }
-    heroCLick(data: Hero): void {
-        this.selectedHero=data;
-            console.log(data);
-    }
-}
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch:'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+  path: 'detail/:id',
+  component: HeroDetailComponent
+},
+  { path: '**', component: PageNotFoundComponent }
+];
+
+export const routing = RouterModule.forRoot(routes);
 
