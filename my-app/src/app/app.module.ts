@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
 import { routing } from './app.component';
+import { HeroesComponent }      from './heroes/heroes.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
@@ -14,6 +15,7 @@ import { ModalModule } from 'ngx-bootstrap';// nx-bootstrap initialize
   declarations: [
     AppComponent,
     LoginComponent,
+    HeroesComponent,
     PageNotFoundComponent,
     DashboardComponent,
     HeroDetailComponent

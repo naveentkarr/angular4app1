@@ -1,26 +1,51 @@
+<div class="container">
+    <h2 class="text-center">Dashboard</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <a routerLink="/dashboard" routerLinkActive="active" class="list-group-item">Dashboard</a>
+                <a  class="list-group-item">Hero</a>
+                <a  class="list-group-item">Reported</a>
+                <a  class="list-group-item">Something</a>
+            </div>
+        </div>
+        <div class="col-md-9" >
 
-<h1>Dashboard</h1>
-<h2>Here are some links to help you start: </h2>
-<label>name: </label>
-<input [(ngModel)]="hero.name" placeholder="name">
-<p >{{hero.name}}</p>
-<h2>My Heroes</h2>
-<ul class="heroes">
-    <li *ngFor="let hero of heroes" [class.selected]="hero===selectedHero" (click)="heroCLick(hero)">
-     <span class="badge">{{hero.id}}</span> {{hero.name}}
-</li>
-</ul>
-<hero-detail [hero]="selectedHero"></hero-detail>
-<button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
- 
-<ng-template #template>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    This is a modal.
-  </div>
-</ng-template>
+            <div class="r-container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="jumbotron">
+                            <h2>Heroes</h2>
+                            <p>...</p>
+                            <p><a class="btn btn-primary btn-lg" routerLink="/heroes" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="jumbotron">
+                            <h2>Card One</h2>
+                            <p>...</p>
+                            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="jumbotron">
+                            <h2>Card Two</h2>
+                            <p>...</p>
+                            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="jumbotron">
+                            <h2>Card Three</h2>
+                            <p>...</p>
+                            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+
