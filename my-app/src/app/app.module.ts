@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { routing } from './app.component';
 import { HeroesComponent }      from './heroes/heroes.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {SideNavbarComponent} from './side-navbar/side-navbar.component';
 import {LoginComponent} from './login/login.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HighlightDirective } from './directives-common/highlight/highlight.directive';
+import { UserService } from './services-common/authentication/user.service';
 import { ModalModule } from 'ngx-bootstrap';// nx-bootstrap initialize
 
 @NgModule({
@@ -18,7 +21,9 @@ import { ModalModule } from 'ngx-bootstrap';// nx-bootstrap initialize
     HeroesComponent,
     PageNotFoundComponent,
     DashboardComponent,
-    HeroDetailComponent
+    SideNavbarComponent,
+    HeroDetailComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { ModalModule } from 'ngx-bootstrap';// nx-bootstrap initialize
     routing,
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
