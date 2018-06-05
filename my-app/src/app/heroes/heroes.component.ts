@@ -20,8 +20,13 @@ export class HeroesComponent implements OnInit {
     heroes: Hero[];
     title = 'angular 5 app';
     selectedHero: Hero;
+    isUnchanged: boolean;
+    classAdd: boolean;
+    badCurly: string;
     constructor(private heroService: HeroService, private modalService: BsModalService) {
-
+        this.isUnchanged = false;
+        this.classAdd = true;
+        this.badCurly = 'btn';
     }
     openModal(template: TemplateRef<any>) {
         this.modalRef = this.modalService.show(template);

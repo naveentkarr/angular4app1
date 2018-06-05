@@ -6,8 +6,9 @@
             <div class="r-container">
             <label>name: </label>
             <input [(ngModel)]="hero.name" placeholder="name">
+            <button [disabled]="isUnchanged" [class]="badCurly">Cancel</button>
             <p >{{hero.name}}</p>
-            <h2>My Heroes</h2>
+            <h2>Headin</h2>
             <ul class="list-group">
                 <li class="list-group-item" *ngFor="let hero of heroes" [class.selected]="hero===selectedHero" (click)="heroCLick(hero)">
                     <span class="badge pull-left">{{hero.id}}</span> 

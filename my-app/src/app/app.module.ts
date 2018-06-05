@@ -13,6 +13,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HighlightDirective } from './directives-common/highlight/highlight.directive';
 import { UserService } from './services-common/authentication/user.service';
 import { ModalModule } from 'ngx-bootstrap';// nx-bootstrap initialize
+import { InternationalPhoneModule } from 'ng4-intl-phone';
+import { InternationalPhoneNumberModule } from 'ngx-international-phone-number';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ModalModule } from 'ngx-bootstrap';// nx-bootstrap initialize
     BrowserModule,
     FormsModule,
     routing,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    InternationalPhoneModule,
+    InternationalPhoneNumberModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

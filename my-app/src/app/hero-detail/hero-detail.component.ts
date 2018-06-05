@@ -11,6 +11,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class HeroDetailComponent implements OnInit {
     @Input() hero: Hero;
+    private phoneNumber:number=34534
     constructor(
         private heroService: HeroService,
         private route: ActivatedRoute,

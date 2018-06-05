@@ -12,6 +12,8 @@
                         <label>name: </label>
                         <input [(ngModel)]="hero.name" placeholder="name" />
                     </div>
+                    <international-phone-number [(ngModel)]="phoneNumber" placeholder="Enter phone number" [maxlength]="20"  [required]="true"  name="phone_number"></international-phone-number>
+                    <!-- <int-phone-prefix placeholder="asdfgg" [(ngModel)]="phoneNumber"></int-phone-prefix> -->
                     <button (click)="goBack()">Back</button>
                 </div>
             </div>
